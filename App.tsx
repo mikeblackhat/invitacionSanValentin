@@ -14,10 +14,10 @@ const App: React.FC = () => {
 
   const notifyWhatsApp = async (message: string) => {
     // REEMPLAZA ESTOS DATOS
-    const PHONE = "TU_NUMERO_AQUI"; // Ejemplo: 51987654321 (con código de país)
+    const PHONE = "51912701756"; // Ejemplo: 51987654321 (con código de país)
     const API_KEY = "TU_API_KEY_AQUI";
 
-    if (PHONE === "TU_NUMERO_AQUI" || !API_KEY) return;
+    if (PHONE === "51912701756" && API_KEY === "TU_API_KEY_AQUI") return;
 
     const url = `https://api.callmebot.com/whatsapp.php?phone=${PHONE}&text=${encodeURIComponent(message)}&apikey=${API_KEY}`;
 
