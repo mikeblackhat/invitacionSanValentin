@@ -1,0 +1,5 @@
+{
+  "name": "Tarjeta Virtual San Valentín",
+  "description": "Una aplicación romántica e interactiva para pedir San Valentín con un botón 'No' que escapa del cursor y una celebración con confeti al aceptar.",
+  "requestFramePermissions": []
+}
