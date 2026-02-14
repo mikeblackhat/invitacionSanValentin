@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import successGif from '../dfdmfd.gif';
 
 const SuccessCard: React.FC = () => {
   const handleClaimVoucher = () => {
@@ -11,20 +12,20 @@ const SuccessCard: React.FC = () => {
 
   return (
     <div className="bg-white p-8 md:p-12 rounded-[50px] shadow-[0_30px_100px_rgba(255,77,109,0.25)] border-[10px] md:border-[15px] border-white max-w-lg w-full mx-auto text-center relative overflow-hidden">
-      <motion.div 
+      <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
         className="relative z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold text-[#ff4d6d] mb-4 font-romantic flex items-center justify-center gap-3">
-          ¡Siiiiiiii! 
+          ¡Siiiiiiii!
           <motion.div
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               rotate: [0, 5, -5, 0]
             }}
-            transition={{ 
+            transition={{
               duration: 0.8,
               repeat: Infinity,
               ease: "easeInOut"
@@ -36,15 +37,15 @@ const SuccessCard: React.FC = () => {
             </svg>
           </motion.div>
         </h1>
-        
+
         <div className="flex justify-center mb-6">
           <motion.div
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            <img 
-              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm1pczhnbHBoZzltbmxhc2M2cXZxODNqY21pY2Z2cjRybm9oZ2Z2bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v9D6QOmsxWAsx1S58W/giphy.gif" 
-              alt="Celebration" 
+            <img
+              src={successGif}
+              alt="Celebration"
               className="w-48 h-48 md:w-56 md:h-56 object-contain drop-shadow-xl"
             />
           </motion.div>
@@ -59,7 +60,7 @@ const SuccessCard: React.FC = () => {
           <span className="text-4xl md:text-6xl font-logo text-[#ff4d6d] drop-shadow-md">
             ¡Qué emoción!
           </span>
-          
+
           <div className="bg-rose-50 p-5 md:p-6 rounded-3xl border-2 border-rose-100 shadow-inner mt-4 w-full">
             <p className="text-rose-600 font-bold text-lg md:text-2xl mb-1">
               ¡Entonces está decidido! 🍣

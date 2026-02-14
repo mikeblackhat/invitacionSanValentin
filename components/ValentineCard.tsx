@@ -1,5 +1,6 @@
 import React, { useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import holiGif from '../holi.gif';
 
 interface ValentineCardProps {
   onAccept: () => void;
@@ -12,7 +13,7 @@ const ValentineCard: React.FC<ValentineCardProps> = ({ onAccept, onMoveNo, noPos
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const noButtonStyle = useMemo(() => {
-    const max = 12; 
+    const max = 12;
     const progress = Math.min(evadeCount, max);
     const scale = Math.max(1 - (progress / max), 0);
     const opacity = Math.max(1 - (progress / max), 0);
@@ -23,7 +24,7 @@ const ValentineCard: React.FC<ValentineCardProps> = ({ onAccept, onMoveNo, noPos
     if (audioRef.current) {
       audioRef.current.volume = 0.4;
       audioRef.current.currentTime = 0;
-      audioRef.current.play().catch(() => {});
+      audioRef.current.play().catch(() => { });
     }
     onAccept();
   };
@@ -31,19 +32,18 @@ const ValentineCard: React.FC<ValentineCardProps> = ({ onAccept, onMoveNo, noPos
   return (
     <div className="bg-white p-6 md:p-10 rounded-[40px] shadow-[0_20px_60px_rgba(255,77,109,0.3)] border-[8px] md:border-[12px] border-white max-w-sm w-full mx-auto text-center relative overflow-visible">
       <audio ref={audioRef} src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" preload="auto" />
-      
+
       <h1 className="text-3xl md:text-4xl font-bold text-rose-500 mb-6 font-romantic tracking-wide px-2 leading-tight">
         ¿Quieres ser mi San Valentín?
       </h1>
-      
+
       <div className="flex justify-center mb-6">
         <div className="relative w-44 h-44 md:w-56 md:h-56 flex items-center justify-center">
-           {/* Usando una URL de Tenor más directa y común */}
-           <img 
-              src="https://media.tenor.com/C7-m9fVvY_QAAAAC/bunny-butt-bunny.gif" 
-              alt="Cute Bunny Butt" 
-              className="w-full h-full object-contain rounded-2xl"
-           />
+          <img
+            src={holiGif}
+            alt="Valentine GIF"
+            className="w-full h-full object-contain rounded-2xl"
+          />
         </div>
       </div>
 
@@ -71,7 +71,7 @@ const ValentineCard: React.FC<ValentineCardProps> = ({ onAccept, onMoveNo, noPos
                 opacity: noButtonStyle.opacity
               }}
               exit={{ scale: 0, opacity: 0 }}
-              transition={{ 
+              transition={{
                 x: { type: 'spring', stiffness: 150, damping: 20 },
                 y: { type: 'spring', stiffness: 150, damping: 20 },
                 scale: { duration: 0.4 },
@@ -84,7 +84,7 @@ const ValentineCard: React.FC<ValentineCardProps> = ({ onAccept, onMoveNo, noPos
           )}
         </AnimatePresence>
       </div>
-      
+
       <div className="mt-8">
         <div className="flex justify-center gap-2">
           {[...Array(3)].map((_, i) => (
